@@ -180,12 +180,6 @@ html {
   outline: none;
   color: whitesmoke;
 }
-.content h1 {
-  color: rgb(36, 11, 94);
-  padding: 1rem;
-  font-size: 4rem;
-  text-shadow: 6px 5px 8px rgba(51, 6, 51, 0.459);
-}
 
 .icons a:hover {
   text-decoration: none;
@@ -248,18 +242,42 @@ html {
 }
 
 .content {
-  margin-top: 80px;
   padding: 20px;
 }
+.content h1 {
+  position: relative;
+  color: rgb(36, 11, 94);
+  padding: 1rem;
+  font-size: 4rem;
+  text-shadow: 6px 5px 8px rgba(51, 6, 51, 0.459);
+}
 
+.flex-online {
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #ffffff69;
+  backdrop-filter: blur(3px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#flex-img {
+  width: 950px;
+  position: absolute;
+  transform: rotate(125deg);
+  bottom: -700px;
+  right: 109px;
+}
 div.gallery {
-  background-color: #ffffff;
+  background-color: #ffffff56;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   backdrop-filter: blur(3px);
   border-radius: 20px;
   height: 280px;
   width: 280px;
   margin-top: 1rem;
+  overflow: hidden;
 }
 
 div.gallery:hover {
@@ -269,6 +287,8 @@ div.gallery:hover {
 div.gallery img {
   width: 100%;
   height: auto;
+  margin: 2px;
+  border-radius: 20px;
 }
 
 div.desc {
@@ -302,15 +322,61 @@ div.desc {
 }
 
 .grid-display {
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 50px 20px;
+  grid-template-areas:
+    'uno dos'
+    'tres cuatro'
+    'cinco seis'
+    'siete ocho';
+  background-color: #ffffff63;
+  backdrop-filter: blur(2px);
   margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.description,
+.img-preview {
+  overflow: hidden;
+  height: 300px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.322);
+  backdrop-filter: blur(2px);
+}
+
+.description h3 {
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.description a {
+  background-color: #8635b8;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+.img-preview img {
+  width: 100%;
   border-radius: 20px;
 }
 
-.description {
-  width: 500px;
-  height: 500px;
-  border: 1px solid red;
+.img-bottom img {
+  width: 400px;
+  position: absolute;
+  z-index: 1;
+  left: -160px;
+  bottom: -140px;
 }
