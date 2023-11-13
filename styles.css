@@ -541,8 +541,7 @@ div.desc {
 /* Media query para tablets en orientación vertical */
 @media screen and (min-width: 375px) and (max-width: 767px) and (orientation: portrait) {
   /* Estilos específicos para tablets en orientación vertical */
-  body {
-  }
+
   .content h1 {
     font-size: 2.5rem;
   }
