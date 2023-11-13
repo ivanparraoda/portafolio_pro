@@ -7,6 +7,7 @@
 body {
   background: rgb(255, 255, 255);
   color: #ffffff;
+  font-size: 16px;
 }
 body,
 html {
@@ -14,6 +15,7 @@ html {
   height: 100%;
   width: 100%;
   font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
 }
 
 .main-container {
@@ -147,9 +149,9 @@ html {
   opacity: 0; /* Inicialmente oculta el contenedor de reemplazo */
 }
 
-.about {
-  width: 480px;
-}
+/* .about {
+  /* width: 480px; */
+/* } */
 .about p {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -274,8 +276,7 @@ div.gallery {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   backdrop-filter: blur(3px);
   border-radius: 20px;
-  height: 280px;
-  width: 280px;
+
   margin-top: 1rem;
   overflow: hidden;
 }
@@ -302,19 +303,6 @@ div.desc {
   width: 24.99999%;
 }
 
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
 .clearfix:after {
   content: '';
   display: table;
@@ -322,16 +310,16 @@ div.desc {
 }
 
 .grid-display {
-  padding: 2rem;
+  padding: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 50px 20px;
+  /* grid-template-columns: repeat(1fr);
+  grid-template-rows: repeat(auto-fill, minmax(235px, 1fr)); */
+  gap: 20px 20px;
   grid-template-areas:
     'uno dos'
-    'tres cuatro'
+    'cuatro tres'
     'cinco seis'
-    'siete ocho';
+    'ocho siete';
   background-color: #ffffff63;
   backdrop-filter: blur(2px);
   margin-top: 2rem;
@@ -340,11 +328,57 @@ div.desc {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+.uno,
+.dos,
+.tres,
+.cuatro,
+.cinco,
+.seis,
+.siete,
+.ocho {
+  box-shadow: rgba(187, 187, 187, 0.25) 0px 54px 55px,
+    rgba(255, 255, 255, 0.12) 0px -12px 30px,
+    rgba(255, 254, 254, 0.12) 0px 4px 6px,
+    rgba(255, 253, 253, 0.17) 0px 12px 13px,
+    rgba(223, 221, 221, 0.09) 0px -3px 5px;
+}
+
+.uno {
+  grid-area: uno;
+}
+
+.dos {
+  grid-area: dos;
+}
+
+.tres {
+  grid-area: tres;
+}
+
+.cuatro {
+  grid-area: cuatro;
+}
+
+.cinco {
+  grid-area: cinco;
+}
+
+.seis {
+  grid-area: seis;
+}
+
+.siete {
+  grid-area: siete;
+}
+
+.ocho {
+  grid-area: ocho;
+}
 
 .description,
 .img-preview {
   overflow: hidden;
-  height: 300px;
+  height: auto;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.322);
   backdrop-filter: blur(2px);
@@ -379,4 +413,135 @@ div.desc {
   z-index: 1;
   left: -160px;
   bottom: -140px;
+}
+
+@media screen and (max-width: 767px) {
+  .initial-container img {
+    max-width: 100%;
+  }
+  .grid-display {
+    padding: 1rem;
+    gap: 20px 20px;
+    grid-template-areas:
+      'uno'
+      'dos'
+      'tres'
+      'cuatro'
+      'cinco'
+      'seis'
+      'siete'
+      'ocho';
+  }
+
+  .description {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .description h3 {
+    padding: 1rem;
+    font-size: 0.55rem;
+    /* text-align: center; */
+  }
+
+  .description a {
+    background-color: #8635b8;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    /* width: 25%; */
+    justify-content: center;
+    /* margin-left: 2rem; */
+    margin: 20px;
+  }
+
+  .flex-online {
+    padding: 1rem;
+  }
+
+  .main-container {
+    width: 90%;
+    height: 80%;
+  }
+
+  .card {
+    padding: 0.5rem;
+  }
+  .about span {
+    font-size: 2rem;
+  }
+
+  .intro--options {
+    padding-top: 5px;
+  }
+  .about p {
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    padding: 2rem;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+  }
+
+  #flex-img {
+    max-width: 100%;
+    position: absolute;
+    transform: rotate(258deg);
+    bottom: -333px;
+    right: 25px;
+  }
+  div.desc {
+    padding: 9px;
+    text-align: center;
+    font-size: 0.4rem;
+  }
+  div.gallery img {
+    border-radius: 5px;
+  }
+  div.gallery {
+    border-radius: 5px;
+    padding: 2px;
+  }
+}
+
+/* Media query para tablets en orientación horizontal o vertical */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Estilos específicos para tablets */
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+  .description h3 {
+    padding: 2rem;
+    font-size: 1rem;
+    text-align: left;
+  }
+  div.desc {
+    font-size: 0.7rem;
+  }
+
+  .about p {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    font-size: 1rem;
+  }
+
+  div.gallery img {
+    border-radius: 5px;
+  }
+}
+
+/* Media query para tablets en orientación vertical */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Estilos específicos para tablets en orientación vertical */
+  body {
+    background-color: blue;
+  }
 }
